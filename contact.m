@@ -5,8 +5,10 @@ phi_vec = linspace(0,2*pi,36);
 [theta,phi] = meshgrid(theta_vec,phi_vec);
 
 % H is your histogram data
-H = 1+(cos(theta).*(sin(phi))); %Another example
+%H = 1+(cos(theta).*(sin(phi))); %Another example
 %H = 20*(cos(theta).* rand(size(phi)));
+% Load the H array from the text file
+H = load('depth_array.txt');
 Hmax = max(H(:));
 r = 0.05*Hmax; %Box size
 %polar(nan,max(max(H.*cos(phi))));
