@@ -27,3 +27,20 @@ eigenvalues, eigenvectors = np.linalg.eig(tensor)
 print("Eigenvalues:", eigenvalues)
 print("Eigenvectors:", eigenvectors)
 #print(empty_tensor)
+
+n = 3  # Specify the size of the square matrix
+identity_matrix = np.eye(n)
+
+print("Identity matrix:\n", identity_matrix)
+
+A = np.array([1, 2])
+B = np.array([5, 6])
+
+double_dot_product = np.sum(A * B)
+
+print("Double dot product:", double_dot_product)
+
+z = -1
+x = 1
+phi = np.arctan2(z, x)
+print(phi)
