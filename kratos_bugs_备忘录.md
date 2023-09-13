@@ -5,3 +5,5 @@
 Reason：forgot to set properties to SpherePart!["SpheresPart.DEMParts_Body","DEM-DefaultMaterial"]
 
 2. Remember to set the right element type in DEM.mdpa. [SphericParticle3D] or [SphericContinuumParticle3D]
+
+3. Check Material.json, whether you have set properties to every part. ["SpheresPart","DEM-DefaultMaterial"]
