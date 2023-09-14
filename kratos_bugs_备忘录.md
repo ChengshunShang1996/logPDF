@@ -7,3 +7,5 @@ Reason：forgot to set properties to SpherePart!["SpheresPart.DEMParts_Body","DE
 2. Remember to set the right element type in DEM.mdpa. [SphericParticle3D] or [SphericContinuumParticle3D]
 
 3. Check Material.json, whether you have set properties to every part. ["SpheresPart","DEM-DefaultMaterial"]
+
+4. If your DEM simulation runs much slower than expected, you can check the [MaxTimeStep], [NeighbourSearchFrequency], and [SearchTolerance].
