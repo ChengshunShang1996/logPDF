@@ -20,6 +20,12 @@ parameters = [
     ((10, 0, 0), (1, 0.5, 0.75), 0.6, 0.8)
 ]
 
+parameters = [
+    ((1, 0, 0), (1, 0.5, 0.75), 0.5, 0.75),
+    ((4, 0, 0), (1, 0.5, 0.75), 0.8, 0.6),
+    ((6, 0, 0), (1, 0.5, 0.75), 0.3, 1.0)
+]
+
 # Create an append filter to combine the particles
 append_filter = vtk.vtkAppendPolyData()
 

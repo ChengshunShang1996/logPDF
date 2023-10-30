@@ -17,3 +17,7 @@
     > pip : The term 'pip' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
 
     Try "python -m pip install XXX"
+
+6. NameError: name 'GROUP_ID' is not defined
+
+    Possible reason: add "from KratosMultiphysics.DEMApplication import *" in your running file
