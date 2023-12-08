@@ -21,3 +21,7 @@
 6. NameError: name 'GROUP_ID' is not defined
 
     Possible reason: add "from KratosMultiphysics.DEMApplication import *" in your running file
+
+7. The structure of Cosimlation: CoSimAnalysis --> CoSimSolver --> FEMAnalysis (FEMSolver) and DEMAnalysis (DEMSolver)
+
+    WeakCouplingSolver --> SubTimeStepSolver
