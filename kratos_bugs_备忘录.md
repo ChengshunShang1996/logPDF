@@ -25,3 +25,10 @@
 7. The structure of Cosimlation: CoSimAnalysis --> CoSimSolver --> FEMAnalysis (FEMSolver) and DEMAnalysis (DEMSolver)
 
     WeakCouplingSolver --> SubTimeStepSolver
+
+8. Membrane加载 颗粒信息融合设置
+
+    （1）Nodes 和原来合并起来，其他部分放到后边就可以
+    （2）记得 修改分组名称
+    > Begin NodalData COHESIVE_GROUP // GUI group identifier: Membrane  依次类推
+    > Begin SubModelPart DEMParts_Membrane // Group Membrane // Subtree DEMParts 
