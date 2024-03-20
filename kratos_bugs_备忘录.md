@@ -32,3 +32,13 @@
     （2）记得 修改分组名称
     > Begin NodalData COHESIVE_GROUP // GUI group identifier: Membrane  依次类推
     > Begin SubModelPart DEMParts_Membrane // Group Membrane // Subtree DEMParts 
+
+9. DEM-FEM 耦合文件
+    
+    1）COPY FEM几何信息到DEM的wall 信息，注意修改Condition的类型名字；Begin Conditions RigidFace3D3N// GUI group identifier: lat
+
+    2）SubModelPart部分  对调【Begin SubModelPartConditions End SubModelPartConditions】和【Begin SubModelPartElements    End SubModelPartElements】
+
+    3）Displacement 只需要写出来 SubModelPartNodes
+
+    4）SubModelPart部分 压力施加部分 不需要对调 【Begin SubModelPartConditions End SubModelPartConditions】和【Begin SubModelPartElements    End SubModelPartElements】
