@@ -1,5 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
+plt.rcParams['mathtext.fontset'] = 'stix'
+plt.rcParams['font.family'] = 'STIXGeneral'
 
 def calculate_radius_multiplier(time, is_radius_expansion_rate_change, radius_expansion_acceleration=0, radius_expansion_rate=0, radius_multiplier_max=2, delta_time=0, radius_expansion_rate_min = 100):
     if is_radius_expansion_rate_change:
@@ -38,11 +40,11 @@ radius_expansion_rate = 1000
 radius_expansion_rate_min = 100
 radius_multiplier_max = 2
 delta_time=2e-9
-time_range = [0, 0.012]
+time_range = [0, 0.014]
 time_values = np.linspace(time_range[0], time_range[1], 100)
 for radius_expansion_acceleration in radius_expansion_acceleration_list:
     radius_multiplier_values_list = []
-    my_label = 'Nonlinear, a = ' + radius_expansion_acceleration
+    my_label = 'Nonlinear, $v_0 = 1000, v_\mathrm{min} = 100$, a = ' + radius_expansion_acceleration
     radius_expansion_acceleration = float(radius_expansion_acceleration)
     for t in time_values:
         value = calculate_radius_multiplier(t, is_radius_expansion_rate_change, radius_expansion_acceleration, radius_expansion_rate, radius_multiplier_max, delta_time, radius_expansion_rate_min)
@@ -55,13 +57,13 @@ is_radius_expansion_rate_change=False
 radius_expansion_rate_min_list = [100, 150, 200]
 for radius_expansion_rate_min in radius_expansion_rate_min_list:
     radius_multiplier_values_list = []
-    my_label = 'Linear, v = ' + str(radius_expansion_rate_min)
+    my_label = 'Linear, $v_0$ = ' + str(radius_expansion_rate_min)
     for t in time_values:
         value = calculate_radius_multiplier(t, is_radius_expansion_rate_change, radius_expansion_acceleration, radius_expansion_rate, radius_multiplier_max, delta_time, radius_expansion_rate_min)
         radius_multiplier_values_list.append(value/2)
     plt.plot(time_values, radius_multiplier_values_list, '--', linewidth = 3, label = my_label)
 
-plt.xlim(0.0, 0.012)
+plt.xlim(0.0, 0.014)
 plt.ylim(0.5, 1.1)
 plt.xlabel('Time / s')
 plt.ylabel('Radius multiplier')
